@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 18th Birthday Anshu! 🎉</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .music-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .music-btn:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .header {
+            animation: fadeInDown 1s ease-out;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 4em;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+        }
+        
+        .age {
+            font-size: 6em;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+            animation: pulse 2s infinite;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 50px;
+            margin: 30px 0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 1s ease-out 0.5s both;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .message {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .hearts {
+            font-size: 2em;
+            margin: 20px 0;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        .button-container {
+            margin-top: 40px;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+        
+        .celebrate-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .celebrate-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.6);
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            z-index: 999;
+            pointer-events: none;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.2);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+        
+        .balloons {
+            position: fixed;
+            bottom: -150px;
+            animation: float 6s infinite;
+            font-size: 3em;
+            z-index: 1;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-100vh) rotate(10deg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .age {
+                font-size: 4em;
+            }
+            .card {
+                padding: 30px;
+            }
+            .message {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵</button>
+    
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_4a8f9e8dc6.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Happy Birthday</h1>
+            <h1 class="highlight">Anshu! 🎂</h1>
+            <div class="age">18</div>
+        </div>
+        
+        <div class="card">
+            <div class="hearts">💖 ✨ 💕 ✨ 💖</div>
+            <p class="message">
+                To the most <span class="highlight">amazing</span> person in my life,<br><br>
+                
+                Happy 18th Birthday, my love! 🎉<br><br>
+                
+                Today marks the beginning of a beautiful new chapter in your life. 
+                Watching you grow into the incredible person you are has been the greatest joy of my life. 
+                Your smile lights up my world, your laughter is my favorite melody, and your presence makes every moment magical. ✨<br><br>
+                
+                On this special day, I want you to know that you are <span class="highlight">cherished beyond words</span>. 
+                May this year bring you endless happiness, unforgettable adventures, and all the dreams your heart holds. 
+                I'm so grateful to celebrate this milestone with you, and I can't wait to make countless more beautiful memories together. 💫<br><br>
+                
+                Here's to you, to us, and to the amazing journey ahead!<br><br>
+                
+                <span class="highlight">I love you more than words can express! 💕</span>
+            </p>
+            <div class="hearts">💖 ✨ 💕 ✨ 💖</div>
+        </div>
+        
+        <div class="button-container">
+            <button class="celebrate-btn" onclick="celebrate()">🎉 Celebrate! 🎉</button>
+        </div>
+    </div>
+    
+    <script>
+        // Create stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+        
+        // Create floating balloons
+        const balloonEmojis = ['🎈', '🎀', '🌸', '💝', '🎁'];
+        setInterval(() => {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloons';
+            balloon.textContent = balloonEmojis[Math.floor(Math.random() * balloonEmojis.length)];
+            balloon.style.left = Math.random() * 100 + '%';
+            balloon.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(balloon);
+            
+            setTimeout(() => {
+                balloon.remove();
+            }, 7000);
+        }, 3000);
+        
+        // Music control
+        let musicPlaying = false;
+        const music = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicBtn');
+        
+        function toggleMusic() {
+            if (musicPlaying) {
+                music.pause();
+                musicBtn.textContent = '🎵';
+            } else {
+                music.play();
+                musicBtn.textContent = '🎶';
+            }
+            musicPlaying = !musicPlaying;
+        }
+        
+        // Confetti celebration
+        function celebrate() {
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffd700'];
+            
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animation = `confettiFall ${Math.random() * 3 + 2}s linear`;
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }, i * 20);
+            }
+            
+            // Auto-play music on celebration
+            if (!musicPlaying) {
+                toggleMusic();
+            }
+        }
+        
+        // Add confetti animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes confettiFall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Auto-celebrate after 2 seconds
+        setTimeout(() => {
+            celebrate();
+        }, 2000);
+    </script>
+</body>
+</html>
